@@ -6,6 +6,8 @@ from keras.layers import concatenate, Dense, BatchNormalization
 
 from keras.utils import plot_model
 
+#Code in this file is mostly taken from https://www.kaggle.com/yboris/keras-two-prong-model-80/notebook
+
 pd.set_option("mode.chaned_assignment", None)
 
 def smooth_curve(points, factor=0.75):
