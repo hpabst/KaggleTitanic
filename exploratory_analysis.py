@@ -38,7 +38,8 @@ def clean_data(df):
             one_hot = one_hot.add_prefix(col)
             for new_name in list(one_hot):
                 new_df[new_name] = one_hot[new_name]
-    new_df["Fare"] = df["Fare"]
+    fare_max = df["Fare"].max()
+    new_df["Fare"] = (df["Fare"]/fare_max)
     if "Survived" in df:
         new_df["Survived"] = df["Survived"]
     return new_df
